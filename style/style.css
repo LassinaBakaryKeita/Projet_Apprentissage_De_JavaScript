@@ -1,0 +1,281 @@
+/**
+ * RESET CSS
+ * Réinitialise les styles par défaut des navigateurs
+ */
+ * {
+    margin: 0; /* Supprime toutes les marges */
+    padding: 0; /* Supprime tous les paddings */
+    box-sizing: border-box; /* Inclut les bordures et padding dans les dimensions */
+}
+
+/**
+ * VARIABLES CSS ET ÉLÉMENTS GÉNÉRIQUES
+ * Définition des variables de couleur et styles de base
+ */
+body {
+    --color-primary: #f76c5e; /* Couleur primaire (rouge-orange) */
+    --color-secondary: #f68e5f; /* Couleur secondaire (orange) */
+    --color-tertiary: #ffeee6; /* Couleur tertiaire (beige clair) */    
+}
+
+/* Mise en forme des titres */
+h1 {
+    margin: 10px; /* Marge autour du titre */
+    font-size: 60px; /* Taille de police très grande */
+    font-weight: 900; /* Épaisseur de police maximale */
+    color: var(--color-primary); /* Utilisation de la couleur primaire */
+}
+
+h2 {
+    margin: 10px; /* Marge autour du titre */
+    font-size: 30px; /* Taille de police grande */
+    font-weight: 600; /* Épaisseur de police semi-gras */
+    color: var(--color-secondary); /* Utilisation de la couleur secondaire */
+}
+
+h3 {
+    margin: 10px; /* Marge autour du titre */
+    font-size: 17px; /* Taille de police normale */
+    font-weight: 500; /* Épaisseur de police moyenne */
+    color: var(--color-secondary); /* Utilisation de la couleur secondaire */
+}
+
+/* Mise en forme des boutons radio */
+input[type='radio'] {
+    filter: grayscale(1); /* Passe les boutons radio en niveaux de gris */
+}
+
+/* Mise en forme des champs de texte et email */
+input[type='text'],
+input[type='email'] {
+    width: 100%; /* Prend toute la largeur disponible */
+    margin-right: 10px; /* Marge à droite */
+    padding: 5px; /* Espacement interne */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 17px; /* Taille de police */
+    font-weight: 600; /* Épaisseur de police semi-gras */
+    color: var(--color-primary); /* Couleur du texte */
+}
+
+/* Style des placeholders (texte d'exemple) */
+input[type='text']::placeholder,
+input[type='email']::placeholder {
+    color: var(--color-secondary); /* Couleur du placeholder */
+    opacity: 50%; /* Opacité réduite */
+}
+
+/* Style des boutons */
+button {
+    padding: 5px; /* Espacement interne */
+    border: none; /* Supprime la bordure par défaut */
+    border-radius: 8px; /* Coins arrondis */
+    font-family: 'Roboto', sans-serif; /* Police de caractères */
+    font-weight: 600; /* Épaisseur de police semi-gras */
+    font-size: 17px; /* Taille de police */
+    color: var(--color-secondary); /* Couleur du texte */
+    background-color: white; /* Fond blanc */
+}
+
+/* Effet au survol des boutons */
+button:hover {
+    color: var(--color-primary); /* Changement de couleur du texte */
+    background-color: var(--color-tertiary); /* Changement de fond */
+    cursor: pointer; /* Curseur en forme de main */
+}
+
+/* Effet quand le bouton a le focus (accessibilité) */
+button:focus {
+    background-color: var(--color-tertiary); /* Changement de fond */
+    border: 3px solid var(--color-primary); /* Bordure colorée */
+    padding: 2px; /* Ajustement du padding pour compenser la bordure */
+}
+
+/**
+ * STRUCTURE PRINCIPALE DE LA PAGE
+ */
+body {
+    display: flex; /* Utilisation de flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centrage horizontal */
+    min-height: 100vh; /* Hauteur minimale de la fenêtre */
+    font-family: 'Roboto', sans-serif; /* Police de caractères */
+}
+
+/* En-tête de la page */
+header {
+    display: flex; /* Utilisation de flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    align-items: center; /* Centrage horizontal */
+}
+
+/* Contenu principal */
+main {
+    display: flex; /* Utilisation de flexbox */
+    flex-direction: column; /* Disposition en colonne */
+    justify-content: space-between; /* Espacement entre les éléments */
+    align-items: center; /* Centrage horizontal */
+    width: 50%; /* Largeur relative */
+    min-width: 200px; /* Largeur minimale */
+    margin-bottom: 50px; /* Marge en bas */
+    padding: 50px; /* Espacement interne */
+    text-align: center; /* Centrage du texte */
+    color: white; /* Couleur du texte */
+    font-size: 17px; /* Taille de police */
+    font-weight: 500; /* Épaisseur de police */
+    border-radius: 30px; /* Coins arrondis */
+    background-color: var(--color-secondary); /* Fond avec couleur secondaire */
+}
+
+/* Pied de page */
+footer {
+    position: sticky; /* Position collante */
+    bottom: 0; /* Collé en bas */
+    display: flex; /* Utilisation de flexbox */
+    justify-content: center; /* Centrage horizontal */
+    width: 100%; /* Pleine largeur */
+    padding: 30px; /* Espacement interne */
+    font-weight: 600; /* Épaisseur de police semi-gras */
+    font-size: 17px; /* Taille de police */
+    color: white; /* Couleur du texte */
+    background-color: var(--color-secondary); /* Fond avec couleur secondaire */
+}
+
+/**
+ * STYLES DES ÉLÉMENTS DE LA ZONE PRINCIPALE
+ */
+
+/* Zone d'options (choix mots/phrases) */
+.optionSource {
+    margin: 20px; /* Marge autour */
+}
+
+/* Espacement entre les boutons radio */
+.optionSource input[type='radio']:not(:first-child) {
+    margin-left: 20px; /* Marge à gauche sauf pour le premier */
+}
+
+/* Zone d'affichage du mot/phrase à taper */
+.zoneProposition {
+    display: flex; /* Utilisation de flexbox */
+    align-items: center; /* Centrage vertical */
+    justify-content: center; /* Centrage horizontal */
+    width: 100%; /* Pleine largeur */
+    margin: 10px 0 10px 0; /* Marges haut et bas */
+    padding: 20px; /* Espacement interne */
+    border-radius: 20px; /* Coins arrondis */
+    background-color: white; /* Fond blanc */
+    font-size: 30px; /* Taille de police grande */
+    font-weight: 600; /* Épaisseur de police semi-gras */
+    color: var(--color-primary); /* Couleur du texte */
+}
+
+/* Zone de saisie */
+.zoneSaisie {
+    display: flex; /* Utilisation de flexbox */
+    justify-content: space-between; /* Espacement entre les éléments */
+    width: 100%; /* Pleine largeur */
+    margin-bottom: 30px; /* Marge en bas */
+}
+
+/* Champ de texte dans la zone de saisie */
+.zoneSaisie input[type='text'] {
+    width: 80%; /* Largeur de 80% */
+}
+
+/* Bouton dans la zone de saisie */
+.zoneSaisie button {
+    width: 20%; /* Largeur de 20% */
+}
+
+/* Zone d'affichage du score */
+.zoneScore {
+    font-size: 20px; /* Taille de police */
+}
+
+/* Zone de partage */
+.zonePartage {
+    padding-top: 20px; /* Marge en haut */
+}
+
+/**
+ * STYLES POUR LA POPUP DE PARTAGE
+ */
+
+/* Arrière-plan semi-transparent de la popup */
+.popupBackground {
+    display: none; /* Masqué par défaut */
+    position: fixed; /* Position fixe */
+    height: 100vh; /* Hauteur complète de la fenêtre */
+    width: 100vw; /* Largeur complète de la fenêtre */
+    background-color: rgba(255, 255, 255, 0.5); /* Fond blanc semi-transparent */
+}
+
+/* Conteneur de la popup */
+.popup {
+    position: absolute; /* Position absolue */
+    top: 50%; /* Positionnement vertical */
+    left: 50%; /* Positionnement horizontal */
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    flex-wrap: wrap; /* Passage à la ligne si nécessaire */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    width: 300px; /* Largeur fixe */
+    padding: 20px; /* Espacement interne */
+    text-align: center; /* Centrage du texte */
+    color: white; /* Couleur du texte */
+    font-size: 17px; /* Taille de police */
+    font-weight: 500; /* Épaisseur de police */
+    background-color: #f76c5e; /* Fond avec couleur primaire */
+    border-radius: 30px; /* Coins arrondis */
+    z-index: 1; /* Au-dessus des autres éléments */
+}
+
+/* Classe pour afficher la popup */
+.active {
+    display: flex !important; /* Affiche en flex (priorité maximale) */
+}
+
+/* Paragraphes dans la popup */
+.popup p {
+    width: 100%; /* Pleine largeur */
+    margin-bottom: 20px; /* Marge en bas */
+}
+
+/* Div dans la popup */
+.popup div {
+    font-size: 25px; /* Taille de police grande */
+    padding: 5px; /* Espacement interne */
+    padding-bottom: 15px; /* Espacement en bas supplémentaire */
+}
+
+/* Champs de formulaire dans la popup */
+.popup input {
+    margin-bottom: 10px; /* Marge en bas */
+}
+
+/* Boutons dans la popup */
+.popup button {
+    margin: 5px; /* Marge autour */
+}
+
+/** 
+ * RESPONSIVE DESIGN - ADAPTATION AUX DIFFÉRENTS ÉCRANS
+ */
+
+/* Pour les écrans de moins de 1200px */
+@media screen and (max-width: 1200px) {
+    main {
+        width: 60%; /* Augmentation de la largeur relative */
+        padding: 30px; /* Réduction de l'espacement interne */
+    }
+}
+
+/* Pour les écrans de moins de 800px (tablettes) */
+@media screen and (max-width: 800px) {
+    main {
+        width: 90%; /* Presque toute la largeur */
+        padding: 10px; /* Espacement interne minimal */
+    }
+}
